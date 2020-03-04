@@ -10,33 +10,59 @@
 </head>
 <body>
     <script>
-         Vue.component('cc-post',{
+        //  Vue.component('cc-post',{
             
-            data(){
-                return {count:0}
-            },
-            props:['post'],
-            methods:{
-                clickButton(){
-                    this.count++;
-                }
-            },
-          //  data:{count:0},
+        //     data(){
+        //         return {count:0}
+        //     },
+        //     props:['post','searchtext'],
+        //     methods:{
+        //         clickButton(){
+        //             this.count++;
+        //         }
+        //     },
+        //   //  data:{count:0},
           
+        //     template:`
+        //     <div>
+        //     <h3>{{post.title}}</h3>
+        //     <div v-html="post.content"></div>
+        //     <input type="text" :value=searchtext>
+        //     <input type="button" value="Enlarge Text" @click="$emit('font-larger',0.2)" >
+        //    </div>
+        //     `
+        // })
+
+        Vue.component('alert-box',{
+           
             template:`
+           
             <div>
-            <h3>{{post.title}}</h3>
-            <div v-html="post.content"></div>
-            <input type="button" value="Enlarge Text" @click="$emit('font-larger')" />
-           </div>
+                notices:<slot></slot>
+            </div>
             `
         })
+
+        // Vue.component("home-tab",{
+
+        // })
+        // Vue.component("home-tab",{
+
+        // })
+
+
     </script>
 
     <div id="components-demo">
         <div :style="{fontSize: postFontSize +'em' }">
-            <cc-post v-for="ps in posts" v-bind:post="ps" v-bind:key="ps.id" v-on:font-larger="DoFontLarger" />
+           
+            <ccpost v-for="(ps,index) in posts" v-bind:searchtext="index"  v-bind:post="ps" v-bind:key="ps.id" v-on:font-larger="DoFontLarger" />
         </div>
+       
+        <component v-bind:is="curTab"></component>
+        <button v-on:click="switchTab('home')">home</button>
+        <button v-on:click="switchTab('Post')">post</button>
+        <button v-on:click="switchTab('arc')">arc</button>
       </div>
     <script>
         new Vue({ 
@@ -46,12 +72,49 @@
                         { id: 2, title: 'Blogging with Vue',content:"just simple text" },
                         { id: 3, title: 'Why Vue is so fun',content:"just simple text" }
                     ],
+                    curTab:"hometab",
+                  //  taps:["home","Posts","Archieve"],
                     postFontSize:1
                 },
                 el: '#components-demo' ,
                 methods:{
-                    DoFontLarger(){
-                        this.postFontSize+=0.1;
+                    DoFontLarger(addem){
+                        this.postFontSize+=addem;
+                    },
+                    switchTab(tn){
+                        this.curTab = tn+"tab";
+                    }
+                },
+                components:{
+                    hometab:{   
+                        template:" <div> at home </div>",
+                    },
+                    Posttab:{
+                        template:" <div> at post </div>",
+                    },
+                    arctab:{
+                        template:" <div> at arc </div>",
+                    },
+                    ccpost:{
+                        data(){
+                                return {count:0}
+                            },
+                            props:['post','searchtext'],
+                            methods:{
+                                clickButton(){
+                                    this.count++;
+                                }
+                            },
+                        //  data:{count:0},
+                        
+                            template:`
+                            <div>
+                                <h3>{{post.title}}</h3>
+                                <div v-html="post.content"></div>
+                                <input type="text" :value=searchtext>
+                                <input type="button" value="Enlarge Text" @click="$emit('font-larger',0.2)" >
+                            </div>
+                            `
                     }
                 }
             });
