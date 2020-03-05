@@ -5,10 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>demo1</title>
-    <script src="https://cdn.bootcss.com/vue/2.4.1/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     
 </head>
 <body>
 
+<div id="Demo1">
+    <div v-show="isShow">this is Demo </div>
+    <div>
+        <input type="text" v-model="filterKey"  />
+    </div>
+    <div>
+        <ul>
+            <li v-for="item in searchList">
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <input type="button" value="Control Button" @click="switchButton()"/> 
+</div>
+<script>
+    var demoVue = new Vue({
+            el: "#Demo1",
+            data:{
+                isShow:false,
+                filterKey:"",
+                list:["one","two","three"]
+            },
+            computed:{
+                searchList:function(){
+                    var that = this;
+                    var filter = this.list.filter(function (item){
+                        return item.indexOf(that.filterKey)>=0;
+                    })
+                    return filter;
+                }    
+            },
+            methods:{
+                switchButton(){
+                    this.isShow = !this.isShow;
+                    console.log("aaa");
+                }
+            },
+            watch:{
+                filterKey: function (nv,ov){
+                    var msg = `filterKey change from ${ov} to ${nv}`;
+                    console.log(msg);
+                }
+            }
+
+
+    });
+</script>
 </body>
 </html>
