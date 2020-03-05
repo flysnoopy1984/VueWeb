@@ -1,4 +1,4 @@
-# vueclidemo
+# clidemo1
 
 ## Project setup
 ```
