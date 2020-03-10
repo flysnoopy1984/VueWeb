@@ -42,7 +42,6 @@
                 `
             }
             const routesMap = [
-              
                     {
                         path:'/page/:Id',
                         name:"pageone",
@@ -61,6 +60,12 @@
             var router =  new VueRouter(
             {
                 routes:routesMap
+            });
+
+            router.beforeEach((to, from, next) => {
+            // ...
+                console.log(to);
+                next();
             });
           
             var app = new Vue({
