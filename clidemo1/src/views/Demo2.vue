@@ -1,17 +1,24 @@
 <template>
     <div>
-
+        {{info}}
     </div>
 </template>
+
 <script>
 export default {
     name:"AxioDemo",
-    data:{
-        info:null
+    data(){
+        return {
+             info:null
+        }
+       
     },
     methods:{
         initData(){
-            this.$api.get('')
+            var that = this;
+            this.$api.post('res/GetBannerList',null,s=>{
+                this.info = s;
+            });
         }
     },
     created(){

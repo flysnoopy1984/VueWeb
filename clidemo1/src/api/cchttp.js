@@ -48,7 +48,8 @@ function apiAxios (method, url, params, success, failure) {
     withCredentials: false
   })
     .then(function (res) {
-      if (res.data.success === true) {
+      // debugger
+      if (res.data.IsSuccess === true) {
         if (success) {
           success(res.data)
         }
