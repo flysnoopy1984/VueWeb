@@ -14,9 +14,6 @@
 <script>
 export default {
     name:"formDialog",
-    props:{
-        DlgData:Object,
-    },
     data(){
         return {
             cform:{
@@ -26,18 +23,9 @@ export default {
             }
         }
     },
-    methods:{
-
-    },
-   
-    watch:{
-        'DlgData':{
-            immediate:true,
-            handler(val){          
-              this.cform = val;
-             
-            }, 
-        },
-    }
+//      mounted(){
+//         this.$store.commit("setformData",this.cform);
+//    //  console.log("child mounted");
+//     }
 }
 </script>

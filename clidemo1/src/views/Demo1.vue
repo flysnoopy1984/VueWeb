@@ -3,10 +3,7 @@
         <h3>问卷调查
           <input type="button" value="new" @click="dialogShow=!dialogShow" >
         </h3>
-        <formDlg v-if="dialogShow" :DlgData="this.form"  />
-       <!-- 注意这里，formData是自定义属性，用来向子组件传递数据，如果要想被子组件控制，必须加上 .sync，
-请注意，现在新版本的vue可以不用写.sync-->
-        <!-- <child:formData.sync="form"></child> -->
+        <formDlg :DlgData="form" v-if="dialogShow"  /> 
         <div class="">
             <p>姓名：{{form.name}}</p>
             <p>年龄：{{form.age}}</p>
@@ -21,7 +18,7 @@ export default {
   name:"FormDemo",
   data(){
     return {
-       dialogShow:false,
+       dialogShow:true,
        form: {
         name: "",
         namePla: "姓名不能为空",
@@ -30,6 +27,11 @@ export default {
       }
     }
   },
+  methods:{
+    // ShowInfo(val){
+    // }
+  },
+ 
  
   components:{
     formDlg,
