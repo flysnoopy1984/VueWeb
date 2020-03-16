@@ -23,9 +23,9 @@ export default {
             }
         }
     },
-//      mounted(){
-//         this.$store.commit("setformData",this.cform);
-//    //  console.log("child mounted");
-//     }
+      mounted(){
+         this.$store.commit("setformData",this.cform);
+    //  console.log("child mounted");
+     }
 }
 </script>
