@@ -1,0 +1,28 @@
+/* 导航背景 */
+.bg-nav{
+    background-color: #409EFF;
+}
+/* 右边Tag背景 */
+.bg-right-content{
+    background-color: #ECF5FF;
+}
+/* 顶部菜单颜色 */
+.nav1{
+	color: #37a;
+	color:var(--headerNav-color1);
+}
+.nav2{
+	color: #F37F00;
+	color:var(--headerNav-color2);
+}
+.nav3{
+	color:#0F959D;
+	color:var(--headerNav-color3);
+}
+.ly-left-nav{
+    color:white;
+}
+/* Column Nav 颜色 */
+.col-nav-bg{
+	color:#D9ECFF
+}

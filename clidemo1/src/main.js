@@ -5,12 +5,17 @@ import router from './router'
 import store from './store'
 import api from './api/cchttp.js'
 
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
+
 Vue.prototype.$api = api
 Vue.config.productionTip = false
 
 
-new Vue({
+var mianVue = new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+});
+mianVue.$mount('#app');

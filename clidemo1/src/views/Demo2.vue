@@ -1,5 +1,9 @@
 <template>
+
     <div>
+        <template v-for="item in list">
+            {{item.Id}}
+        </template>
         {{info}}
     </div>
 </template>
@@ -9,6 +13,7 @@ export default {
     name:"AxioDemo",
     data(){
         return {
+             list:null,
              info:null
         }
        

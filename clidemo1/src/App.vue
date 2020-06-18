@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/formvux">Form Vux </router-link> | 
       <router-link to="/demo1">Form</router-link> |
-      <router-link to="/demo2">Demo2</router-link>
+      <router-link to="/demo2">Demo2</router-link> | 
+      <router-link to="/Login">Login</router-link>
     </div>
     <router-view/>
   </div>

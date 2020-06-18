@@ -1,0 +1,44 @@
+{
+  "id": "1863039",
+  "name": "VueBook",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12310197",
+      "name": "person_crop_circle_fill",
+      "font_class": "person_crop_circle_fill",
+      "unicode": "e871",
+      "unicode_decimal": 59505
+    },
+    {
+      "icon_id": "11808003",
+      "name": "rt_menu_spread",
+      "font_class": "rt_menu_spread",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "15203980",
+      "name": "rt_menu_spread",
+      "font_class": "rt_menu_spread-down",
+      "unicode": "e872",
+      "unicode_decimal": 59506
+    },
+    {
+      "icon_id": "14122677",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "8776842",
+      "name": "search",
+      "font_class": "icon-test",
+      "unicode": "e63c",
+      "unicode_decimal": 58940
+    }
+  ]
+}
